@@ -1,1 +1,1257 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#1f1f1f" />
+  <title>PrimaClean Magdeburg – Reinigung, über die man nicht sprechen muss.</title>
+  <meta name="description" content="PrimaClean: Reinigung für Praxen, Büros und kleine Gewerbebetriebe in Magdeburg. Planbar, diskret, mit klaren Abläufen." />
+  <meta name="robots" content="index,follow" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="PrimaClean – Reinigung, über die man nicht sprechen muss." />
+  <meta property="og:description" content="Planbar. Diskret. Klar. Für Praxen, Büros und kleine Gewerbebetriebe in Magdeburg." />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ WICHTIG: HIER EURE ECHTEN KONTAKTDATEN EINTRAGEN -->
+  <script>
+    window.PRIMACLEAN = {
+      phoneDisplay: "+49 391 000 000 0",
+      phoneTel: "+493910000000",
+      email: "info@primaclean-magdeburg.de",
+      whatsappNumber: "493910000000" // ohne +, ohne Leerzeichen
+    };
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f1f1f'/%3E%3Cpath d='M18 38c9 0 11-16 23-16 3 0 5 .6 7 1.6' stroke='%23a9b6a2' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M18 44c9 0 11-16 23-16 3 0 5 .6 7 1.6' stroke='%23f6f6f4' stroke-width='4' fill='none' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E" />
+
+  <style>
+    /* =========================
+       THEME TOKENS (DARK DEFAULT)
+       Auto light via prefers-color-scheme
+       ========================= */
+    :root{
+      --bg: #0f1011;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(0,0,0,.14);
+      --card: rgba(255,255,255,.05);
+      --text: #f6f6f4;
+      --muted: rgba(246,246,244,.82);
+      --muted2: rgba(246,246,244,.62);
+      --line: rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.22);
+
+      --accent: #a9b6a2;      /* sage */
+      --accent2: #d7d0c3;     /* sand */
+
+      --radius: 22px;
+      --radius2: 34px;
+      --max: 1120px;
+
+      --h1: clamp(40px, 4.6vw, 62px);
+      --h2: clamp(26px, 2.6vw, 34px);
+      --h3: 19px;
+
+      --p: 17px;
+      --p2: 15.5px;
+    }
+
+    /* LIGHT THEME */
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f7f5;
+        --surface: rgba(0,0,0,.04);
+        --surface2: rgba(255,255,255,.82);
+        --card: rgba(255,255,255,.86);
+        --text: #1d1e1f;
+        --muted: rgba(29,30,31,.76);
+        --muted2: rgba(29,30,31,.56);
+        --line: rgba(0,0,0,.10);
+        --shadow: 0 18px 50px rgba(0,0,0,.08);
+
+        --accent: #6f7f6b;
+        --accent2: #cfc7b8;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 18% 6%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 62%),
+        radial-gradient(700px 440px at 84% 12%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 60%),
+        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.72;
+      letter-spacing: .2px;
+      font-size: var(--p);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+    .skip{
+      position:absolute; left:-9999px; top:12px;
+      background:var(--card); border:1px solid var(--line); padding:10px 12px; border-radius:14px;
+    }
+    .skip:focus{left:12px; z-index:9999}
+
+    /* =========================
+       HEADER
+       ========================= */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 230px;
+    }
+    .mark{
+      width:42px; height:42px; border-radius:16px;
+      background: linear-gradient(145deg,
+        color-mix(in srgb, var(--accent) 26%, transparent),
+        color-mix(in srgb, var(--text) 8%, transparent)
+      );
+      border:1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      display:grid; place-items:center;
+    }
+    .mark svg{width:22px; height:22px}
+    .brand .name{display:flex; flex-direction:column; gap:2px; line-height:1.1}
+    .brand b{font-size:15px; letter-spacing:.35px}
+    .brand span{font-size:12.5px; color:var(--muted2)}
+
+    nav ul{list-style:none; display:flex; gap:18px; padding:0; margin:0; align-items:center}
+    nav a{
+      font-size:14px; color:var(--muted);
+      padding:10px 10px; border-radius:14px;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+      border: 1px solid transparent;
+    }
+    nav a:hover{background: var(--surface); color:var(--text); border-color:var(--line)}
+
+    .nav-actions{display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width: 260px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .14s ease, background .18s ease, border-color .18s ease;
+      user-select:none;
+    }
+    .btn:hover{background: color-mix(in srgb, var(--surface) 65%, transparent); transform: translateY(-1px)}
+    .btn.primary{
+      background: linear-gradient(145deg,
+        color-mix(in srgb, var(--accent) 28%, transparent),
+        color-mix(in srgb, var(--text) 10%, transparent)
+      );
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    }
+    .btn.primary:hover{border-color: color-mix(in srgb, var(--accent) 70%, var(--line))}
+    .btn.ghost{background: transparent}
+    .icon{width:16px;height:16px; opacity:.9}
+    .menu-btn{display:none}
+
+    /* =========================
+       "PAGES" (hash router)
+       ========================= */
+    .page{display:none}
+    .page.active{display:block}
+
+    /* =========================
+       HERO
+       ========================= */
+    .hero{padding: 56px 0 30px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-left{padding: 42px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border:1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    h1{
+      margin: 18px 0 12px;
+      font-size: var(--h1);
+      line-height: 1.12;
+      letter-spacing: -0.7px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 60ch;
+      font-size: 18px;
+    }
+    .hero-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px}
+    .micro{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 14px;
+      display:flex; gap:12px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .micro .dot{width:4px; height:4px; border-radius:99px; background: color-mix(in srgb, var(--text) 18%, transparent)}
+    .soft-line{margin-top:22px; border-top:1px solid var(--line); padding-top:18px}
+    .soft-promise{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      font-size: var(--p2);
+      max-width: 66ch;
+    }
+    .soft-promise b{color:var(--text)}
+    .spark{
+      width: 18px; height: 18px; border-radius: 7px;
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      display:grid; place-items:center; margin-top:4px;
+    }
+
+    /* RIGHT: LEAD */
+    .hero-right{padding: 18px; display:flex; flex-direction:column; gap:12px}
+    .lead-top{
+      padding: 22px;
+      border-radius: 26px;
+      background: var(--surface2);
+      border:1px solid var(--line);
+    }
+    .lead-top h2{margin:0 0 6px; font-size: 19px}
+    .lead-top p{margin:0; color: var(--muted); font-size: 15.5px}
+    .tabs{display:flex; gap:10px; margin-top: 14px; flex-wrap:wrap}
+    .tab{
+      flex:1; min-width: 130px;
+      text-align:center;
+      padding: 11px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor:pointer;
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      user-select:none;
+    }
+    .tab[aria-selected="true"]{
+      background: color-mix(in srgb, var(--accent) 16%, transparent);
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+      color: var(--text);
+    }
+
+    form{
+      padding: 22px;
+      border-radius: 26px;
+      background: var(--surface2);
+      border:1px solid var(--line);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .field{display:flex; flex-direction:column; gap:8px}
+    label{font-size: 13.5px; color: var(--muted2)}
+    input, select, textarea{
+      width:100%;
+      padding: 13px 13px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--surface) 80%, transparent);
+      color: var(--text);
+      outline:none;
+      font-size: 15px;
+      transition: border-color .18s ease, background .18s ease;
+    }
+    input::placeholder, textarea::placeholder{color: color-mix(in srgb, var(--muted2) 85%, transparent)}
+    input:focus, select:focus, textarea:focus{
+      border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+      background: color-mix(in srgb, var(--surface) 95%, transparent);
+    }
+    textarea{min-height: 96px; resize: vertical}
+    .full{grid-column: 1 / -1}
+
+    .form-actions{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      margin-top: 14px;
+      flex-wrap:wrap;
+    }
+    .fine{color: var(--muted2); font-size: 13px; max-width: 52ch}
+    .fine a{color: color-mix(in srgb, var(--accent) 95%, var(--text)); text-decoration:underline; text-underline-offset:3px}
+    .inline-actions{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* =========================
+       SECTIONS
+       ========================= */
+    section{padding: 58px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 16px; flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+    .section-head h2{margin:0; font-size: var(--h2); letter-spacing:-0.2px}
+    .section-head p{margin:0; color: var(--muted); max-width: 72ch; font-size: 16.5px}
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .mini{
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border:1px solid var(--line);
+      box-shadow: 0 10px 40px rgba(0,0,0,.06);
+    }
+    .mini h3{margin:0 0 8px; font-size: var(--h3)}
+    .mini p{margin:0; color: var(--muted); font-size: 16px}
+    .tag{
+      display:inline-flex; margin-top: 14px;
+      color: color-mix(in srgb, var(--accent) 92%, var(--text));
+      font-weight: 700;
+      font-size: 13.5px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .step{
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border:1px solid var(--line);
+    }
+    .num{
+      width: 38px; height: 38px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      background: color-mix(in srgb, var(--accent) 16%, transparent);
+      border:1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .step h3{margin:0 0 8px; font-size: var(--h3)}
+    .step p{margin:0; color: var(--muted); font-size: 16px}
+
+    /* PROOF */
+    .proof{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .quote{
+      padding: 30px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background: var(--card);
+    }
+    .quote p{margin:0; font-size: 19px; line-height:1.55}
+    .quote small{display:block; margin-top: 14px; color: var(--muted2); font-size: 14px}
+
+    .list{
+      padding: 30px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background: var(--surface2);
+      display:flex; flex-direction:column; gap: 14px;
+    }
+    .item{display:flex; gap:12px; align-items:flex-start; color: var(--muted); font-size: 16px}
+    .check{
+      width:20px; height:20px; flex:0 0 auto; margin-top: 3px;
+      border-radius: 7px;
+      border:1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      display:grid; place-items:center;
+    }
+    .check svg{width:13px;height:13px}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 16px 18px;
+    }
+    details + details{margin-top: 12px}
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      font-size: 16px;
+      list-style:none;
+      display:flex; justify-content:space-between; align-items:center;
+      gap: 10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    .caret{width:18px;height:18px; opacity:.8; transition: transform .18s ease}
+    details[open] .caret{transform: rotate(180deg)}
+    details p{margin: 12px 0 0; color: var(--muted); font-size: 16px; max-width: 82ch}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--line);
+      padding: 46px 0 52px;
+      color: var(--muted2);
+      font-size: 14px;
+    }
+    .foot{display:flex; justify-content:space-between; align-items:flex-start; gap: 16px; flex-wrap:wrap}
+    .foot a{color: var(--muted); text-decoration:underline; text-underline-offset:3px}
+    .foot b{color: var(--text)}
+    .tiny{max-width: 74ch}
+
+    /* TOAST */
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+      display:none;
+      gap: 10px;
+      align-items:flex-start;
+      max-width: min(760px, calc(100% - 24px));
+      color: var(--muted);
+      z-index: 200;
+      backdrop-filter: blur(10px);
+    }
+    .toast.show{display:flex}
+    .toast b{color: var(--text)}
+    .toast .x{
+      margin-left:auto;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      border-radius: 12px;
+      padding: 6px 10px;
+      cursor:pointer;
+    }
+
+    /* SIMPLE CONTENT PAGE */
+    .content-card{
+      margin: 26px auto 0;
+      padding: 34px;
+      border-radius: var(--radius2);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .content-card h1{
+      font-size: clamp(30px, 3.6vw, 44px);
+      margin: 0 0 12px;
+      letter-spacing: -0.5px;
+    }
+    .content-card p{color: var(--muted); font-size: 16.5px; max-width: 82ch}
+    .content-card .back{margin-top: 18px}
+
+    /* MOBILE */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      nav ul{display:none}
+      .menu-btn{display:inline-flex}
+      .cards{grid-template-columns: 1fr}
+      .steps{grid-template-columns: 1fr}
+      .proof{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+      .nav-actions{min-width:auto}
+      .hero-left{padding: 34px}
+      section{padding: 52px 0}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .btn, nav a, .tab, .caret{transition:none}
+    }
+  </style>
+
+  <!-- JSON-LD LocalBusiness (optional: mit echten Daten ergänzen) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PrimaClean",
+    "areaServed": "Magdeburg",
+    "description": "Reinigung für Praxen, Büros und kleine Gewerbebetriebe in Magdeburg. Planbar, diskret, mit klaren Abläufen."
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="Hauptnavigation">
+        <a class="brand" href="#home" data-nav aria-label="PrimaClean Start">
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 14c4 0 6-8 12-8 1.6 0 2.8.35 4 .9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--accent)"/>
+              <path d="M6 18c4 0 6-8 12-8 1.6 0 2.8.35 4 .9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="opacity:.9"/>
+            </svg>
+          </div>
+          <div class="name">
+            <b>PrimaClean</b>
+            <span>Magdeburg · diskret, strukturiert</span>
+          </div>
+        </a>
+
+        <nav aria-label="Sektionen">
+          <ul>
+            <li><a href="#ablauf" data-scroll>Ablauf</a></li>
+            <li><a href="#bereiche" data-scroll>Einsatzbereiche</a></li>
+            <li><a href="#warum" data-scroll>Warum wir</a></li>
+            <li><a href="#faq" data-scroll>FAQ</a></li>
+            <li><a href="#kontakt" data-scroll>Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn ghost menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Menü
+          </button>
+
+          <a class="btn ghost" href="#" id="ctaCallTop">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 3h3l1 5-2 1c1.2 2.6 3.3 4.7 6 6l1.1-2 5 1v3c0 1.1-.9 2-2 2-8.3 0-15-6.7-15-15 0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Anrufen
+          </a>
+
+          <a class="btn primary" href="#kontakt" data-scroll id="ctaTop">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m18 0a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2m18 0-9 6L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Unverbindlich sprechen
+          </a>
+        </div>
+      </div>
+
+      <!-- mobile nav -->
+      <div id="mobileNav" class="card" style="display:none; margin-bottom:16px; border-radius:18px;">
+        <div style="padding:12px;">
+          <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+            <a class="btn" style="justify-content:flex-start" href="#ablauf" data-scroll>Ablauf</a>
+            <a class="btn" style="justify-content:flex-start" href="#bereiche" data-scroll>Einsatzbereiche</a>
+            <a class="btn" style="justify-content:flex-start" href="#warum" data-scroll>Warum wir</a>
+            <a class="btn" style="justify-content:flex-start" href="#faq" data-scroll>FAQ</a>
+            <a class="btn" style="justify-content:flex-start" href="#kontakt" data-scroll>Kontakt</a>
+            <a class="btn" style="justify-content:flex-start" href="#impressum" data-nav>Impressum</a>
+            <a class="btn" style="justify-content:flex-start" href="#datenschutz" data-nav>Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- =========================
+         PAGE: HOME
+         ========================= -->
+    <div class="page active" id="page-home" data-page="home">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="card hero-left">
+              <div class="kicker">
+                <span aria-hidden="true">●</span>
+                <span>Für Praxen, Büros & kleine Gewerbebetriebe in Magdeburg</span>
+              </div>
+
+              <h1>Reinigung, über die man nicht sprechen muss.</h1>
+
+              <p class="sub">
+                Planbar. Diskret. Klar. Wir sorgen dafür, dass Reinigung im Alltag einfach funktioniert – ohne Nachfassen, ohne Chaos.
+              </p>
+
+              <div class="hero-ctas">
+                <a class="btn primary" href="#ablauf" data-scroll id="ctaAblauf">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2v4m0 12v4M4 12H2m20 0h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M7 7l2.5 2.5M16.5 16.5 19 19M19 7l-2.5 2.5M7.5 16.5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Ablauf ansehen
+                </a>
+
+                <a class="btn" href="#kontakt" data-scroll id="ctaTalk">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Unverbindlich sprechen
+                </a>
+              </div>
+
+              <div class="micro" aria-label="Kurze Signale">
+                <span>Antwort meist innerhalb von 24 Stunden</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>Feste Zeiten</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>Ein Ansprechpartner</span>
+              </div>
+
+              <div class="soft-line">
+                <div class="soft-promise">
+                  <div class="spark" aria-hidden="true"></div>
+                  <div>
+                    <b>Unser Prinzip:</b> Wenn wir unseren Job richtig machen, wird Reinigung kein Thema – und genau das ist das Ziel.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEAD -->
+            <aside class="card hero-right" aria-label="Kontakt & Anfrage">
+              <div class="lead-top">
+                <h2>In 60 Sekunden klären, worum es geht.</h2>
+                <p>Wähle den Bedarf – dann nur Kontaktdaten. Kurz, freundlich, ohne Hürden.</p>
+
+                <div class="tabs" role="tablist" aria-label="Bedarf auswählen">
+                  <button class="tab" role="tab" aria-selected="true" id="tab1" data-service="Unterhaltsreinigung">Unterhalt</button>
+                  <button class="tab" role="tab" aria-selected="false" id="tab2" data-service="Büro-/Praxisreinigung">Büro/Praxis</button>
+                  <button class="tab" role="tab" aria-selected="false" id="tab3" data-service="Fenster-/Sonderreinigung">Fenster/Sonder</button>
+                </div>
+              </div>
+
+              <!-- ✅ Funktioniert ohne Backend: erstellt Mail + WhatsApp -->
+              <form id="leadForm" action="#" method="post" novalidate>
+                <input type="hidden" id="service" name="service" value="Unterhaltsreinigung" />
+
+                <div class="grid">
+                  <div class="field">
+                    <label for="ziel">Worum geht es?</label>
+                    <select id="ziel" name="ziel" required>
+                      <option value="" selected disabled>Bitte wählen…</option>
+                      <option>Praxis / Therapie</option>
+                      <option>Kanzlei / Büro</option>
+                      <option>Kleines Gewerbe</option>
+                      <option>Treppenhaus / Objekt</option>
+                      <option>Andere</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="rhythmus">Wie oft ungefähr?</label>
+                    <select id="rhythmus" name="rhythmus" required>
+                      <option value="" selected disabled>Bitte wählen…</option>
+                      <option>Täglich</option>
+                      <option>3× pro Woche</option>
+                      <option>2× pro Woche</option>
+                      <option>1× pro Woche</option>
+                      <option>Nach Bedarf</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="start">Wann soll es starten?</label>
+                    <select id="start" name="start" required>
+                      <option value="" selected disabled>Bitte wählen…</option>
+                      <option>So bald wie möglich</option>
+                      <option>In 1–2 Wochen</option>
+                      <option>In 3–4 Wochen</option>
+                      <option>Termin offen</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="flaeche">Fläche (optional)</label>
+                    <input id="flaeche" name="flaeche" type="text" placeholder="z. B. 120 m²" />
+                  </div>
+
+                  <div class="field full">
+                    <label for="note">Hinweise (optional)</label>
+                    <textarea id="note" name="note" placeholder="z. B. Zeiten, Schlüsselregelung, sensible Bereiche…"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Vor- und Nachname" autocomplete="name" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">Telefon</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+49 …" autocomplete="tel" required />
+                  </div>
+
+                  <div class="field full">
+                    <label for="email">E-Mail (optional)</label>
+                    <input id="email" name="email" type="email" placeholder="name@firma.de" autocomplete="email" />
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <div class="fine">
+                    Mit Klick wird eine Nachricht vorbereitet (E‑Mail oder WhatsApp). Keine Speicherung auf dieser Seite.
+                    <a href="#datenschutz" data-nav>Datenschutz</a>
+                  </div>
+                  <div class="inline-actions">
+                    <button class="btn primary" type="submit" id="submitBtn">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M22 2 11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 2 15 22l-4-9-9-4L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Anfrage senden
+                    </button>
+
+                    <a class="btn" href="#" target="_blank" rel="noopener" id="ctaWhatsApp">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.5 8.8c.3-.7.5-.8.9-.8h.7c.2 0 .5.1.6.4l.8 2c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.6 2.1 2.7 2.7l.7-.6c.2-.2.5-.2.7-.1l2 .8c.3.1.4.4.4.6v.7c0 .4-.1.6-.8.9-.7.3-2.3.3-4.1-.7-1.8-1-3.3-2.5-4.3-4.3-1-1.8-1-3.4-.7-4.1Z" fill="currentColor" opacity=".55"/>
+                      </svg>
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section id="warum">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2>Warum PrimaClean?</h2>
+              <p>Weniger Aufwand statt mehr Worte: klare Zeiten, klare Abläufe, direkte Kommunikation.</p>
+            </div>
+          </div>
+
+          <div class="cards" aria-label="Warum wir">
+            <div class="mini">
+              <h3>Planbar statt unklar</h3>
+              <p>Feste Zeiten und reproduzierbare Ergebnisse – damit Sie nicht ständig nachfassen müssen.</p>
+              <span class="tag">Prinzip</span>
+            </div>
+            <div class="mini">
+              <h3>Diskret im Alltag</h3>
+              <p>Ruhiges Auftreten, saubere Übergaben, klare Zuständigkeit – ohne Störung des Betriebs.</p>
+              <span class="tag">Prinzip</span>
+            </div>
+            <div class="mini">
+              <h3>Ein Ansprechpartner</h3>
+              <p>Kurze Wege. Wenn etwas ist, lösen wir es – schnell und direkt.</p>
+              <span class="tag">Prinzip</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section id="ablauf">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2>Ablauf in drei Schritten</h2>
+              <p>Ein kleines System, das viel Ruhe bringt: Klären → Planen → Stabil liefern.</p>
+            </div>
+            <a class="btn primary" href="#kontakt" data-scroll id="ctaProcess">
+              Kurz klären
+            </a>
+          </div>
+
+          <div class="steps" aria-label="Ablaufschritte">
+            <div class="step">
+              <div class="num" aria-hidden="true">1</div>
+              <h3>Klären</h3>
+              <p>Flächen, Zeiten, sensible Bereiche – kurz, ehrlich, ohne Überraschungen.</p>
+            </div>
+            <div class="step">
+              <div class="num" aria-hidden="true">2</div>
+              <h3>Planen</h3>
+              <p>Ein fester Plan, klare Zuständigkeit, saubere Übergaben.</p>
+            </div>
+            <div class="step">
+              <div class="num" aria-hidden="true">3</div>
+              <h3>Stabil liefern</h3>
+              <p>Gleichbleibender Standard + regelmäßige Checks. Leise, zuverlässig, sauber.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHERE IT WORKS -->
+      <section id="bereiche">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2>Einsatzbereiche</h2>
+              <p>Am stärksten sind wir dort, wo Rhythmus und Verlässlichkeit zählen.</p>
+            </div>
+          </div>
+
+          <div class="cards" aria-label="Einsatzbereiche">
+            <div class="mini">
+              <h3>Praxen & Therapien</h3>
+              <p>Hygiene ohne Störung – Reinigung außerhalb der Sprechzeiten, planbar und diskret.</p>
+              <span class="tag">Sehr passend</span>
+            </div>
+            <div class="mini">
+              <h3>Kanzleien & Büros</h3>
+              <p>Ordnung ohne Unterbrechung – klare Zeiten, ruhige Abläufe, sauberer Standard.</p>
+              <span class="tag">Sehr passend</span>
+            </div>
+            <div class="mini">
+              <h3>Kleine Gewerbebetriebe</h3>
+              <p>Sauberkeit ohne Nachfassen – Routine statt „irgendwann“.</p>
+              <span class="tag">Passend</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF -->
+      <section id="vertrauen">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2>Woran man uns erkennt</h2>
+              <p>Weniger Worte, mehr Struktur. Genau das macht den Unterschied.</p>
+            </div>
+          </div>
+
+          <div class="proof">
+            <div class="quote">
+              <p>„Reinigung soll nicht beeindrucken – sie soll funktionieren.“</p>
+              <small>PrimaClean · leise im Hintergrund, zuverlässig im Ergebnis</small>
+            </div>
+
+            <div class="list" aria-label="Kurze Liste">
+              <div class="item">
+                <div class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"/>
+                  </svg>
+                </div>
+                <div>Feste Zeiten</div>
+              </div>
+              <div class="item">
+                <div class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"/>
+                  </svg>
+                </div>
+                <div>Ein Ansprechpartner</div>
+              </div>
+              <div class="item">
+                <div class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"/>
+                  </svg>
+                </div>
+                <div>Klare Absprachen</div>
+              </div>
+              <div class="item">
+                <div class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"/>
+                  </svg>
+                </div>
+                <div>Regelmäßige Checks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2>FAQ</h2>
+              <p>Kurz beantwortet – damit die Entscheidung leicht bleibt.</p>
+            </div>
+          </div>
+
+          <details>
+            <summary>
+              Wie schnell könnt ihr starten?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Nach einer kurzen Klärung nennen wir ein realistisches Startfenster – ohne leere Versprechen.</p>
+          </details>
+
+          <details>
+            <summary>
+              Arbeitet ihr mit festen Teams?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Wo immer möglich: ja. Gleichbleibende Personen sind der beste Hebel für konstanten Standard.</p>
+          </details>
+
+          <details>
+            <summary>
+              Wie kalkuliert ihr den Preis?
+              <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <p>Fair nach Umfang, Rhythmus und Besonderheiten. Oft reicht ein kurzes Gespräch für eine erste Richtung.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="kontakt">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2>Kontakt</h2>
+              <p>Am schnellsten: Anruf oder WhatsApp. Oder nutze das Formular oben – es dauert nur kurz.</p>
+            </div>
+          </div>
+
+          <div class="cards" aria-label="Kontaktoptionen" style="grid-template-columns: 1.2fr .8fr; align-items:stretch;">
+            <div class="mini" style="border-radius: var(--radius2); padding:30px;">
+              <h3 style="margin-bottom:10px;">Direktkontakt</h3>
+              <p style="margin:0 0 16px; color:var(--muted);">
+                Sag kurz Einsatzbereich + Rhythmus – den Rest klären wir gemeinsam.
+              </p>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a class="btn primary" href="#" id="ctaCallBottom">Anrufen</a>
+                <a class="btn" href="#" id="ctaMail">E‑Mail</a>
+                <a class="btn" href="#" target="_blank" rel="noopener" id="ctaWhatsAppBottom">WhatsApp</a>
+              </div>
+
+              <p style="margin-top:16px; color:var(--muted2); font-size:14px;">
+                Hinweis: Wenn du magst, antworten wir auch per WhatsApp – kurz und unkompliziert.
+              </p>
+            </div>
+
+            <div class="mini" style="border-radius: var(--radius2); padding:30px; background: var(--surface2);">
+              <h3 style="margin-bottom:10px;">Kurzprofil</h3>
+              <p style="margin:0; color:var(--muted);">
+                Regional aus Magdeburg. Diskret im Alltag. Klar in der Kommunikation.
+              </p>
+
+              <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted2); font-size:14px;">
+                <b style="color:var(--text)">Claim:</b> PrimaClean sorgt dafür, dass Reinigung kein Thema mehr ist.
+              </div>
+
+              <div style="margin-top:14px;">
+                <a class="btn ghost" href="#impressum" data-nav>Impressum</a>
+                <a class="btn ghost" href="#datenschutz" data-nav>Datenschutz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================
+         PAGE: IMPRESSUM
+         ========================= -->
+    <div class="page" id="page-impressum" data-page="impressum">
+      <div class="wrap">
+        <div class="content-card">
+          <h1>Impressum</h1>
+          <p>
+            <b>Platzhalter</b> – bitte mit euren echten Unternehmensdaten ersetzen (Name/Firma, Anschrift, Kontakt, USt‑IdNr., Vertretungsberechtigte, Register etc.).
+          </p>
+          <p>
+            <b>PrimaClean</b><br/>
+            Straße Nr.<br/>
+            391xx Magdeburg<br/>
+            Telefon: <span id="impPhone"></span><br/>
+            E‑Mail: <span id="impMail"></span>
+          </p>
+          <div class="back">
+            <a class="btn primary" href="#home" data-nav>Zur Startseite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================
+         PAGE: DATENSCHUTZ
+         ========================= -->
+    <div class="page" id="page-datenschutz" data-page="datenschutz">
+      <div class="wrap">
+        <div class="content-card">
+          <h1>Datenschutz</h1>
+          <p>
+            Diese Demo‑Seite speichert keine Formulardaten serverseitig. Beim Absenden wird eine E‑Mail vorbereitet (mailto) oder WhatsApp geöffnet.
+            Wenn ihr ein echtes Server‑Formular nutzt (empfohlen), ergänzt hier eure vollständige DSGVO‑Erklärung (Zwecke, Rechtsgrundlagen, Speicherdauer, Auftragsverarbeiter, Betroffenenrechte).
+          </p>
+          <div class="back">
+            <a class="btn primary" href="#home" data-nav>Zur Startseite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div class="tiny">
+          <b>PrimaClean</b> · Magdeburg<br/>
+          <span>Reinigung, über die man nicht sprechen muss.</span>
+        </div>
+        <div>
+          <a href="#impressum" data-nav>Impressum</a> ·
+          <a href="#datenschutz" data-nav>Datenschutz</a> ·
+          <a href="#home" data-nav>Start</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div>
+      <b id="toastTitle">Hinweis</b><br/>
+      <span id="toastMsg">…</span>
+    </div>
+    <button class="x" id="toastClose" type="button">OK</button>
+  </div>
+
+  <script>
+    // =========================
+    // Helpers
+    // =========================
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    const toast = (title, msg) => {
+      const el = $("#toast");
+      $("#toastTitle").textContent = title;
+      $("#toastMsg").textContent = msg;
+      el.classList.add("show");
+      clearTimeout(window.__toastT);
+      window.__toastT = setTimeout(() => el.classList.remove("show"), 4600);
+    };
+    $("#toastClose").addEventListener("click", () => $("#toast").classList.remove("show"));
+
+    // =========================
+    // Apply Contact Config
+    // =========================
+    const cfg = window.PRIMACLEAN || {};
+    const phoneTel = cfg.phoneTel || "+493910000000";
+    const phoneDisplay = cfg.phoneDisplay || "+49 391 000 000 0";
+    const email = cfg.email || "info@primaclean-magdeburg.de";
+    const wa = cfg.whatsappNumber || "493910000000";
+
+    function setHref(id, href, text){
+      const el = $(id);
+      if(!el) return;
+      el.setAttribute("href", href);
+      if(text) el.textContent = text;
+    }
+
+    // top buttons
+    setHref("#ctaCallTop", `tel:${phoneTel}`, null);
+    setHref("#ctaCallBottom", `tel:${phoneTel}`, `Anrufen (${phoneDisplay})`);
+    setHref("#ctaMail", `mailto:${email}?subject=${encodeURIComponent("Reinigungsanfrage – PrimaClean")}`, `${email}`);
+
+    const waBase = `https://wa.me/${wa}`;
+    const waText = (t) => `${waBase}?text=${encodeURIComponent(t)}`;
+    setHref("#ctaWhatsApp", waText("Hallo PrimaClean, ich möchte eine Reinigungsanfrage stellen."), null);
+    setHref("#ctaWhatsAppBottom", waText("Hallo PrimaClean, ich möchte eine Reinigungsanfrage stellen."), "WhatsApp");
+
+    // Impressum placeholders
+    if($("#impPhone")) $("#impPhone").textContent = phoneDisplay;
+    if($("#impMail")) $("#impMail").textContent = email;
+
+    // =========================
+    // Mobile Menu
+    // =========================
+    const menuBtn = $("#menuBtn");
+    const mobileNav = $("#mobileNav");
+    if (menuBtn) {
+      menuBtn.addEventListener("click", () => {
+        const isOpen = mobileNav.style.display === "block";
+        mobileNav.style.display = isOpen ? "none" : "block";
+        menuBtn.setAttribute("aria-expanded", String(!isOpen));
+      });
+      $$("#mobileNav a").forEach(a => a.addEventListener("click", () => {
+        mobileNav.style.display = "none";
+        menuBtn.setAttribute("aria-expanded", "false");
+      }));
+    }
+
+    // =========================
+    // Tabs (service selection)
+    // =========================
+    const tabs = $$(".tab");
+    const serviceInput = $("#service");
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.setAttribute("aria-selected", "false"));
+        tab.setAttribute("aria-selected", "true");
+        const val = tab.dataset.service || "Unterhaltsreinigung";
+        if(serviceInput) serviceInput.value = val;
+        toast("Ausgewählt", val);
+      });
+    });
+
+    // =========================
+    // Hash Router for "Unterseiten"
+    // =========================
+    function showPage(name){
+      const pages = $$(".page");
+      pages.forEach(p => p.classList.remove("active"));
+
+      const target = $(`#page-${name}`) || $("#page-home");
+      target.classList.add("active");
+
+      // on page change: close menu
+      if(mobileNav) mobileNav.style.display = "none";
+      if(menuBtn) menuBtn.setAttribute("aria-expanded","false");
+
+      // scroll to top for content pages
+      window.scrollTo({top:0, behavior:"smooth"});
+    }
+
+    function route(){
+      const hash = (location.hash || "#home").replace("#","");
+      if(hash === "" || hash === "home"){
+        showPage("home");
+        return;
+      }
+
+      // content pages
+      if(hash === "impressum" || hash === "datenschutz"){
+        showPage(hash);
+        return;
+      }
+
+      // if user clicks section anchor while not on home -> go home first
+      const section = document.getElementById(hash);
+      if(section){
+        showPage("home");
+        // wait one frame so the section exists & is visible
+        requestAnimationFrame(() => {
+          const s2 = document.getElementById(hash);
+          if(s2) s2.scrollIntoView({behavior:"smooth", block:"start"});
+        });
+        return;
+      }
+
+      // fallback
+      showPage("home");
+    }
+
+    window.addEventListener("hashchange", route);
+
+    // intercept clicks: data-nav vs data-scroll
+    $$(["a[data-nav]", "a[data-scroll]"].join(",")).forEach(a => {
+      a.addEventListener("click", (e) => {
+        const href = a.getAttribute("href") || "";
+        if(!href.startsWith("#")) return;
+        // default hash behavior is fine; we just ensure routing does the right thing
+        // (do not preventDefault)
+      });
+    });
+
+    // initial
+    route();
+
+    // =========================
+    // Form submission (mailto)
+    // =========================
+    const form = $("#leadForm");
+    if(form){
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const requiredIds = ["ziel", "rhythmus", "start", "name", "phone"];
+        for (const id of requiredIds) {
+          const el = $("#" + id);
+          if (!el || !String(el.value || "").trim()) {
+            el && el.focus();
+            toast("Kurze Ergänzung", "Bitte ausfüllen: " + (el?.previousElementSibling?.textContent || id));
+            return;
+          }
+        }
+
+        const data = {
+          service: $("#service")?.value || "Unterhaltsreinigung",
+          ziel: $("#ziel")?.value || "",
+          rhythmus: $("#rhythmus")?.value || "",
+          start: $("#start")?.value || "",
+          flaeche: $("#flaeche")?.value || "(optional)",
+          note: $("#note")?.value || "(keine Hinweise)",
+          name: $("#name")?.value || "",
+          phone: $("#phone")?.value || "",
+          email: $("#email")?.value || "(optional)"
+        };
+
+        const subject = encodeURIComponent(`Reinigungsanfrage – ${data.service} (${data.ziel})`);
+        const body = encodeURIComponent(
+`Hallo PrimaClean,
+
+ich möchte eine Reinigungsanfrage stellen.
+
+Bedarf: ${data.service}
+Einsatzbereich: ${data.ziel}
+Rhythmus: ${data.rhythmus}
+Startfenster: ${data.start}
+Fläche (optional): ${data.flaeche}
+
+Hinweise:
+${data.note}
+
+Kontaktdaten:
+Name: ${data.name}
+Telefon: ${data.phone}
+E-Mail: ${data.email}
+
+Viele Grüße
+${data.name}`
+        );
+
+        // Mailto open
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+        toast("Fast fertig", "E‑Mail wurde vorbereitet. Bitte senden – dann melden wir uns.");
+        form.reset();
+        if($("#service")) $("#service").value = "Unterhaltsreinigung";
+        tabs.forEach((t,i)=>t.setAttribute("aria-selected", i===0 ? "true" : "false"));
+      });
+    }
+  </script>
+</body>
+</html>
