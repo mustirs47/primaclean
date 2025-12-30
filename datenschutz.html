@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutzhinweise – PrimaClean</title>
+  <meta name="description" content="Datenschutzhinweise von PrimaClean." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem("pc_theme");
+      const sysDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (sysDark ? "dark" : "light"));
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="PrimaClean Startseite">
+        <img class="brand-logo" src="assets/logo.webp" alt="PrimaClean Logo" width="44" height="44" loading="eager" decoding="async" />
+        <div class="brand-text">
+          <span class="brand-name">PrimaClean</span>
+          <span class="brand-sub">Datenschutzhinweise</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Theme umschalten">Theme</button>
+        <a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h1 class="page-title">Datenschutzhinweise</h1>
+          <p class="muted">Platzhalter – bitte mit eurer vollständigen DSGVO‑Erklärung ersetzen.</p>
+        </div>
+
+        <div class="card reveal">
+          <h2 class="h3">Kurzinfo</h2>
+          <p>
+            Diese Beispiel‑Website nutzt keine Cookies für Marketing‑Tracking. Formulare werden clientseitig verarbeitet
+            (z. B. Mailto/WhatsApp oder ein Formular‑Dienst). Für den Livebetrieb ergänzt bitte:
+          </p>
+          <ul class="bullets">
+            <li>Verantwortlicher, Kontakt, Rechtsgrundlagen</li>
+            <li>Speicherdauer, Betroffenenrechte</li>
+            <li>Auftragsverarbeiter (z. B. Hosting, Formular‑Provider)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span class="muted">© <span id="year"></span> PrimaClean</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/app.js"></script>
+</body>
+</html>

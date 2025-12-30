@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Über uns – PrimaClean Magdeburg</title>
+  <meta name="description" content="Über PrimaClean: Zuverlässig und einfach. B2B Reinigungsservice für Magdeburg und Umgebung." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem("pc_theme");
+      const sysDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (sysDark ? "dark" : "light"));
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="PrimaClean Startseite">
+        <img class="brand-logo" src="assets/logo.webp" alt="PrimaClean Logo" width="44" height="44" loading="eager" decoding="async" />
+        <div class="brand-text">
+          <span class="brand-name">PrimaClean</span>
+          <span class="brand-sub">Über uns</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="ueber-uns.html" aria-current="page">Über uns</a>
+        <a class="nav-link" href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Theme umschalten">Theme</button>
+        <a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a>
+        <button class="btn btn-ghost burger" type="button" id="burger" aria-expanded="false" aria-controls="mobileNav">Menü</button>
+      </div>
+    </div>
+
+    <div class="container mobile-nav" id="mobileNav" hidden>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="ueber-uns.html">Über uns</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+      <div class="mobile-cta"><a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h1 class="page-title">Über uns</h1>
+          <p class="muted">Wir bauen PrimaClean so, dass Kunden uns nicht “managen” müssen.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <h2 class="h3">Markenkern: zuverlässig & einfach</h2>
+            <p>
+              Unser Ziel ist nicht “Marketing‑Sauberkeit”, sondern ein stabiler Ablauf:
+              feste Zeiten, klare Standards, messbare Qualität. So wird Reinigung im Alltag unsichtbar.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h2 class="h3">Arbeitsweise</h2>
+            <ul class="bullets">
+              <li>Klärung: Fläche, Rhythmus, sensible Bereiche</li>
+              <li>Plan: Checkliste + Timing + Ansprechpartner</li>
+              <li>Qualität: regelmäßige Kontrollen & Feedback‑Schleifen</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="card reveal" style="margin-top:16px;">
+          <h2 class="h3">Für wen wir ideal sind</h2>
+          <p class="muted">B2B‑Teams, die Ruhe und Stabilität wollen – statt spontane Improvisation.</p>
+          <div class="grid-3" style="margin-top:16px;">
+            <div class="card feature">
+              <h3 class="h3">Praxen</h3>
+              <p>Diskret, außerhalb eurer Kernzeiten, Hygienefokus nach Absprache.</p>
+            </div>
+            <div class="card feature">
+              <h3 class="h3">Büros</h3>
+              <p>Standardisiert, planbar, ein Ansprechpartner, klare Kommunikation.</p>
+            </div>
+            <div class="card feature">
+              <h3 class="h3">Gewerbe</h3>
+              <p>Skalierbar, zuverlässig, wiederholbarer Standard.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta card reveal" style="margin-top:16px;">
+          <div>
+            <h2>Kurzes Gespräch, klare Richtung</h2>
+            <p class="muted">Sag uns, was du brauchst – wir machen es einfach.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a>
+            <a class="btn btn-secondary" href="services.html">Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="datenschutz.html">Datenschutzhinweise</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span class="muted">© <span id="year"></span> PrimaClean</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/app.js"></script>
+</body>
+</html>

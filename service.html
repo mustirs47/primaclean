@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services – PrimaClean Magdeburg</title>
+  <meta name="description" content="Services von PrimaClean: Unterhaltsreinigung, Büro-/Praxisreinigung, Fensterreinigung, Sonderreinigung." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem("pc_theme");
+      const sysDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (sysDark ? "dark" : "light"));
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="PrimaClean Startseite">
+        <img class="brand-logo" src="assets/logo.webp" alt="PrimaClean Logo" width="44" height="44" loading="eager" decoding="async" />
+        <div class="brand-text">
+          <span class="brand-name">PrimaClean</span>
+          <span class="brand-sub">Services</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav-link" href="services.html" aria-current="page">Services</a>
+        <a class="nav-link" href="ueber-uns.html">Über uns</a>
+        <a class="nav-link" href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Theme umschalten">Theme</button>
+        <a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a>
+        <button class="btn btn-ghost burger" type="button" id="burger" aria-expanded="false" aria-controls="mobileNav">Menü</button>
+      </div>
+    </div>
+
+    <div class="container mobile-nav" id="mobileNav" hidden>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="ueber-uns.html">Über uns</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+      <div class="mobile-cta"><a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h1 class="page-title">Services</h1>
+          <p class="muted">B2B‑Leistungen, klar strukturiert. Damit Entscheidungen leicht werden.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <h2 class="h3">Unterhaltsreinigung</h2>
+            <p>Regelmäßige Reinigung mit festen Checklisten, Zeiten und Ansprechpartnern.</p>
+            <ul class="bullets">
+              <li>Büros & Gewerbeeinheiten</li>
+              <li>Sanitär & Teeküchen</li>
+              <li>Mülleimer, Oberflächen, Böden</li>
+            </ul>
+            <a class="btn btn-primary" href="kontakt.html#anfrage">Anfragen</a>
+          </article>
+
+          <article class="card reveal">
+            <h2 class="h3">Büro-/Praxisreinigung</h2>
+            <p>Diskrete Abläufe außerhalb eurer Kernzeiten – Hygiene ohne Störung.</p>
+            <ul class="bullets">
+              <li>Praxisräume, Empfang, Wartebereiche</li>
+              <li>Hygienefokus nach Absprache</li>
+              <li>Schlüsselregelung möglich</li>
+            </ul>
+            <a class="btn btn-primary" href="kontakt.html#anfrage">Anfragen</a>
+          </article>
+
+          <article class="card reveal">
+            <h2 class="h3">Fensterreinigung</h2>
+            <p>Für saubere Außenwirkung – planbar, mit klarer Terminabsprache.</p>
+            <ul class="bullets">
+              <li>Glasflächen innen/außen</li>
+              <li>Rahmen & Fensterbänke</li>
+              <li>Intervall nach Bedarf</li>
+            </ul>
+            <a class="btn btn-primary" href="kontakt.html#anfrage">Anfragen</a>
+          </article>
+
+          <article class="card reveal">
+            <h2 class="h3">Grund-/Sonderreinigung</h2>
+            <p>Wenn es einmal “richtig” sein muss: nach Umbau, Einzug oder Problemstellen.</p>
+            <ul class="bullets">
+              <li>Grundreinigung Böden</li>
+              <li>Detailreinigung Sanitär</li>
+              <li>Individuelle Sonderleistungen</li>
+            </ul>
+            <a class="btn btn-primary" href="kontakt.html#anfrage">Anfragen</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-secondary">
+      <div class="container">
+        <div class="cta card reveal">
+          <div>
+            <h2>Du willst’s einfach halten?</h2>
+            <p class="muted">Sag uns Service + Rhythmus – wir schicken dir eine klare, kurze Rückmeldung.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a>
+            <a class="btn btn-secondary" href="kontakt.html">Kontakt</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.webp" alt="" width="36" height="36" loading="lazy" decoding="async" />
+          <div>
+            <strong>PrimaClean</strong>
+            <div class="muted">Magdeburg · B2B Reinigung</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="datenschutz.html">Datenschutzhinweise</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span class="muted">© <span id="year"></span> PrimaClean</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt – PrimaClean Magdeburg</title>
+  <meta name="description" content="Kontakt zu PrimaClean Magdeburg: Angebot anfragen, WhatsApp oder Telefon. B2B Reinigung." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem("pc_theme");
+      const sysDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (sysDark ? "dark" : "light"));
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="PrimaClean Startseite">
+        <img class="brand-logo" src="assets/logo.webp" alt="PrimaClean Logo" width="44" height="44" loading="eager" decoding="async" />
+        <div class="brand-text">
+          <span class="brand-name">PrimaClean</span>
+          <span class="brand-sub">Kontakt</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="ueber-uns.html">Über uns</a>
+        <a class="nav-link" href="kontakt.html" aria-current="page">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Theme umschalten">Theme</button>
+        <a class="btn btn-primary" href="#anfrage">Angebot anfragen</a>
+        <button class="btn btn-ghost burger" type="button" id="burger" aria-expanded="false" aria-controls="mobileNav">Menü</button>
+      </div>
+    </div>
+
+    <div class="container mobile-nav" id="mobileNav" hidden>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="ueber-uns.html">Über uns</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+      <div class="mobile-cta"><a class="btn btn-primary" href="#anfrage">Angebot anfragen</a></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h1 class="page-title">Kontakt</h1>
+          <p class="muted">Am besten kurz: Service + Rhythmus. Wir antworten schnell und klar.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <h2 class="h3">Direkt</h2>
+            <p class="muted">Für die schnellste Klärung: Telefon oder WhatsApp.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" id="ctaCall" href="#">Anrufen</a>
+              <a class="btn btn-secondary" id="ctaWA" href="#" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" id="ctaMail" href="#">E-Mail</a>
+            </div>
+            <p class="fineprint">Hinweis: WhatsApp öffnet eine vorgefertigte Nachricht.</p>
+          </div>
+
+          <div class="card reveal" id="anfrage">
+            <h2 class="h3">Anfrageformular</h2>
+            <p class="muted">Ohne Schnickschnack – damit mehr Anfragen durchgehen.</p>
+
+            <form class="form" id="contactForm" action="#" method="post" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="c_service">Service</label>
+                  <select id="c_service" name="service" required>
+                    <option value="" selected disabled>Bitte wählen…</option>
+                    <option>Unterhaltsreinigung</option>
+                    <option>Büro-/Praxisreinigung</option>
+                    <option>Fensterreinigung</option>
+                    <option>Grundreinigung / Sonderleistung</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="c_rhythmus">Rhythmus</label>
+                  <select id="c_rhythmus" name="rhythmus" required>
+                    <option value="" selected disabled>Bitte wählen…</option>
+                    <option>1× pro Woche</option>
+                    <option>2× pro Woche</option>
+                    <option>3× pro Woche</option>
+                    <option>Täglich</option>
+                    <option>Nach Bedarf</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="c_name">Name</label>
+                  <input id="c_name" name="name" type="text" required />
+                </div>
+
+                <div class="field">
+                  <label for="c_phone">Telefon</label>
+                  <input id="c_phone" name="phone" type="tel" required />
+                </div>
+
+                <div class="field field-full">
+                  <label for="c_email">E-Mail (optional)</label>
+                  <input id="c_email" name="email" type="email" />
+                </div>
+
+                <div class="field field-full">
+                  <label for="c_note">Hinweise (optional)</label>
+                  <textarea id="c_note" name="note" placeholder="Fläche, Zeiten, Schlüssel, Besonderheiten…"></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Anfrage senden</button>
+                <a class="btn btn-ghost" href="datenschutz.html">Datenschutzhinweise</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="datenschutz.html">Datenschutzhinweise</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span class="muted">© <span id="year"></span> PrimaClean</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/app.js"></script>
+</body>
+</html>

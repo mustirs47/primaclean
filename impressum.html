@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum – PrimaClean</title>
+  <meta name="description" content="Impressum von PrimaClean." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem("pc_theme");
+      const sysDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (sysDark ? "dark" : "light"));
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="PrimaClean Startseite">
+        <img class="brand-logo" src="assets/logo.webp" alt="PrimaClean Logo" width="44" height="44" loading="eager" decoding="async" />
+        <div class="brand-text">
+          <span class="brand-name">PrimaClean</span>
+          <span class="brand-sub">Impressum</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Theme umschalten">Theme</button>
+        <a class="btn btn-primary" href="kontakt.html#anfrage">Angebot anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h1 class="page-title">Impressum</h1>
+          <p class="muted">Platzhalter – bitte mit euren echten Pflichtangaben ersetzen.</p>
+        </div>
+
+        <div class="card reveal">
+          <h2 class="h3">Angaben gemäß § 5 TMG</h2>
+          <p>
+            <strong>PrimaClean Magdeburg</strong><br>
+            Straße Nr.<br>
+            391xx Magdeburg
+          </p>
+
+          <p>
+            Telefon: <span id="impPhone"></span><br>
+            E‑Mail: <span id="impMail"></span>
+          </p>
+
+          <p class="muted">
+            Ergänzt hier: Vertretungsberechtigte Person, USt‑ID, Registereintrag, Verantwortliche i.S.d. § 18 Abs. 2 MStV etc.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="datenschutz.html">Datenschutzhinweise</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span class="muted">© <span id="year"></span> PrimaClean</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/app.js"></script>
+</body>
+</html>
